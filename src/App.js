@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import AllJokes from "./AllJokes";
 import AllScrape from "./AllScrape";
+import AdminCrud from "./AdminCRUD";
 import Login from "./Login";
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 
@@ -136,7 +137,7 @@ function Scrape() {
 function Admin() {
   return (
     <div className="pageContent">
-      <h2>Admin</h2>
+      <AdminCrud />
     </div>
   );
 }
