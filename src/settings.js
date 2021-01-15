@@ -6,3 +6,4 @@ export const AllUsers = "http://localhost:8080/3_sem_eksamensprojekt/api/info/pe
 export const DeleteUser = "http://localhost:8080/3_sem_eksamensprojekt/api/info/delete/";
 export const UpdateUser = "http://localhost:8080/3_sem_eksamensprojekt/api/info/person";
 export const GetUser = "http://localhost:8080/3_sem_eksamensprojekt/api/info/person/";
+export const AddUser = "http://localhost:8080/3_sem_eksamensprojekt/api/info";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AllUsers, DeleteUser, UpdateUser, GetUser } from "./settings";
+import { AllUsers, DeleteUser, UpdateUser, GetUser, AddUser } from "./settings";
 import {
   Container,
   Row,
@@ -13,6 +13,7 @@ import {
 
 function AdminCrud() {
   const initialValues = {
+    email: "",
     firstName: "",
     lastName: "",
     phone: "",
@@ -95,10 +96,34 @@ function AdminCrud() {
       });
   };
 
+  const addPerson = () => {
+    const options = makeOptions("POST", person);
+
+    fetch(AddUser, options)
+      .then((res) => res.json())
+      .then((res) => fetchPerson())
+      .catch((err) => {
+        if (err.status) {
+          err.fullError.then((e) => console.log(e.detail));
+        } else {
+          console.log("Network error");
+        }
+      });
+  };
+
   const userForm = () => {
     return (
       <div>
         <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="email">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Email"
+              value={person.email}
+              onChange={handleChange}
+            />
+          </Form.Group>
           <Form.Group controlId="firstName">
             <Form.Label>First name</Form.Label>
             <Form.Control
@@ -180,12 +205,12 @@ function AdminCrud() {
     return opts;
   }
 
-  function fetchWithErrorCheck(res) {
+  /* function fetchWithErrorCheck(res) {
     if (!res.ok) {
       return Promise.reject({ status: res.status, fullError: res.json() });
     }
     return res.json();
-  }
+  } */
 
   useEffect(() => {
     fetchPerson();
@@ -239,7 +264,7 @@ function AdminCrud() {
                   })}
               </tbody>
             </Table>
-            <Button>Add</Button>
+            <Button onClick={() => addPerson()}>Add</Button>
           </Col>
         </Row>
 
