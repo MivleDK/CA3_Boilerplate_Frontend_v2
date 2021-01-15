@@ -4,3 +4,5 @@ export const URLScrapeSequential = "http://localhost:8080/3_sem_eksamensprojekt/
 export const URLScrapeParallel = "http://localhost:8080/3_sem_eksamensprojekt/api/scrape/parallel";
 export const AllUsers = "http://localhost:8080/3_sem_eksamensprojekt/api/info/person/all";
 export const DeleteUser = "http://localhost:8080/3_sem_eksamensprojekt/api/info/delete/";
+export const UpdateUser = "http://localhost:8080/3_sem_eksamensprojekt/api/info/person";
+export const GetUser = "http://localhost:8080/3_sem_eksamensprojekt/api/info/person/";
