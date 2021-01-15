@@ -19,7 +19,7 @@ function AdminCrud() {
     const [showEdit, setShowEdit] = useState(false);
     const handleCloseEdit = () => setShowEdit(false);
     const handleShowEdit = () => setShowEdit(true);
-    
+
     /* Handle modal for add */
     const [showAdd, setShowAdd] = useState(false);
     const handleCloseAdd = () => setShowAdd(false);
@@ -145,7 +145,7 @@ function AdminCrud() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            
+
             {/* Modal for edit person */}
             <Modal show={showEdit} onHide={handleCloseEdit}>
                 <Modal.Header closeButton>
